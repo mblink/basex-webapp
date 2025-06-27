@@ -34,7 +34,6 @@ declare
   %rest:query-param('info',     '{$info}')
   %rest:query-param('error',    '{$error}')
   %output:method('html')
-  %output:html-version('5')
 function dba:database(
   $name      as xs:string,
   $resource  as xs:string?,

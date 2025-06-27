@@ -28,7 +28,6 @@ declare
   %rest:query-param('error', '{$error}')
   %rest:query-param('info',  '{$info}')
   %output:method('html')
-  %output:html-version('5')
 function dba:jobs(
   $sort   as xs:string,
   $job    as xs:string?,

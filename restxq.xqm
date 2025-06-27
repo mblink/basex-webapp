@@ -11,10 +11,7 @@ module namespace page = 'http://basex.org/examples/web-page';
 declare
   %rest:GET
   %rest:path('')
-  %output:method('xhtml')
-  %output:omit-xml-declaration('no')
-  %output:doctype-public('-//W3C//DTD XHTML 1.0 Transitional//EN')
-  %output:doctype-system('http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd')
+  %output:method('html')
 function page:start(
 ) as element(Q{http://www.w3.org/1999/xhtml}html) {
   <html xmlns='http://www.w3.org/1999/xhtml'>
@@ -30,11 +27,9 @@ function page:start(
         <li>create web applications and services with
           <a href='https://docs.basex.org/main/RESTXQ'>RESTXQ</a>,</li>
         <li>use full-duplex communication with
-          <a href='https://docs.basex.org/main/WebSockets'>WebSockets</a>,</li>
+          <a href='https://docs.basex.org/main/WebSockets'>WebSockets</a>, and </li>
         <li>query and modify databases via <a href='https://docs.basex.org/main/REST'>REST</a>
-          (try <a href='rest'>here</a>), and</li>
-        <li>browse and update resources via
-          <a href='https://docs.basex.org/main/WebDAV'>WebDAV</a>.</li>
+          (try <a href='rest'>here</a>).</li>
       </ul>
 
       <p>Find more information on the

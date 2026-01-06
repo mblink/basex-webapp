@@ -40,7 +40,17 @@ th {
 td {
   vertical-align: top;
   padding: 0 1rem 0 0;
+  position: relative;
   border: 0;
+}
+
+.resizer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15px;
+  height: 100%;
+  cursor: col-resize;
 }
 
 ol, ul, dd {

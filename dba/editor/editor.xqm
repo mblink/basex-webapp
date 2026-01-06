@@ -38,11 +38,15 @@ function dba:editor(
     config:edited-file()
   }
   return (
+    <colgroup>
+      <col id='left'/>
+      <col id='right'/>
+    </colgroup>,
     <tr>
       <td colspan='2'>
         <form autocomplete='off' action='javascript:void(0);'>{
           <datalist id='files'>{ config:editor-files() ! element option { . } }</datalist>,
-          sequence-join((
+          insert-separator((
             <input type='text' id='file' name='file' placeholder='Name of file'
                    list='files' oninput='checkButtons()' onpropertychange='checkButtons()'/>,
             <button type='submit' name='open' id='open' disabled=''
@@ -58,12 +62,14 @@ function dba:editor(
       </td>
     </tr>,
     <tr>
-      <td width='50%'>
+      <td class='resize'>
         <textarea id='editor' autofocus='' spellcheck='false'/>
+        <div class='resizer'/>
       </td>
-      <td width='50%'>{
+      <td>{
         <textarea id='output' readonly='' spellcheck='false'/>,
         html:js('loadCodeMirror("xquery", true, true);'),
+        html:js('initResizer();'),
         $edited ! html:js('openFile("' || file:name(.) || '");')
       }</td>
     </tr>

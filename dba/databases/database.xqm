@@ -48,7 +48,7 @@ function dba:database(
   let $db-exists := db:exists($name)
   return (
     <tr>{
-      <td>
+      <td width='33%'>
         <form method='post' autocomplete='off'>
           <input type='hidden' name='name' value='{ $name }' id='name'/>
           <h2>{
@@ -94,7 +94,7 @@ function dba:database(
       </td>,
       if (not($resource)) {
         <td class='vertical'/>,
-        <td>
+        <td width='33%'>
           <form method='post' autocomplete='off'>
             <input type='hidden' name='name' value='{ $name }'/>
             <h2>Backups</h2>
@@ -130,7 +130,7 @@ function dba:database(
         </td>
       },
       <td class='vertical'/>,
-      <td>{
+      <td width='33%'>{
         if ($resource) {
           <h2>Resource: { $resource }</h2>,
           <form method='post'>{

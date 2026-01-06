@@ -23,7 +23,7 @@ declare variable $html:NUMBER := ('decimal', 'number', 'bytes');
  : @return page
  :)
 declare function html:wrap(
-  $rows     as element(tr)*,
+  $rows     as element()*,
   $options  as map(*) := {}
 ) as element(html) {
   let $header := head($options?header) ! utils:capitalize(.)

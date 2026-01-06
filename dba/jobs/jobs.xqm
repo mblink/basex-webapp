@@ -35,7 +35,7 @@ function dba:jobs(
   $info   as xs:string?
 ) as element(html) {
   <tr>{
-    <td>
+    <td width='50%'>
       <form method='post' autocomplete='off'>
         <h2>Jobs</h2>
         {
@@ -90,7 +90,7 @@ function dba:jobs(
       let $cached := $details/@state = 'cached'
       return (
         <td class='vertical'/>,
-        <td>
+        <td width='50%'>
           <form method='post' autocomplete='off'>{
             <input type='hidden' name='id' value='{ $job }'/>,
             <h2>{
